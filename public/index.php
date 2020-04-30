@@ -11,7 +11,7 @@ if (!array_key_exists($caminho, $rotas)) {
     http_response_code(404);
     exit();
 }
-
+// inicialização e verificação da session
 session_start();
 $ehRotaDeLogin = stripos($caminho, 'login');
 if(!isset($_SESSION['logado']) && $ehRotaDeLogin ===  false){

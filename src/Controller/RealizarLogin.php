@@ -8,7 +8,7 @@ use Alura\Cursos\Infra\EntityManagerCreator;
 
 class RealizarLogin implements InterfaceControladorRequisicao
 {   
-    use FlashMessageTrait;
+    use FlashMessageTrait; // usa a trait
     /**
      * @var \Doctrine\Common\Persistence\ObjectRepository
      */
@@ -30,7 +30,7 @@ class RealizarLogin implements InterfaceControladorRequisicao
         );
 
         if (is_null($email) || $email === false) {
-            $this->defineMensagem('danger', 'O e-mail digitado não é um e-mail válido.');
+            $this->defineMensagem('danger', 'O e-mail digitado não é um e-mail válido.'); // mensagem da session dentro de trait
             
             header('Location: /login');
             return;
